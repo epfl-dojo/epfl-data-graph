@@ -3,26 +3,24 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
-
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
-var Origin = Vue.extend({
-    template: '<p>This is foo!</p>'
-})
-
-var Bar = Vue.extend({
-    template: '<p>This is bar!</p>'
-})
+import Home from './views/home.vue'
+import GraphDemo from './views/graphDemo.vue'
+import GraphStudOrigin from './views/graphStudOrigin.vue'
 
 var router = new VueRouter({'hashbang': false, 'history': true}) // disable the #! in the url
 
 router.map({
-    '/origin': {
-        component: Origin
+    '/': {
+      component: Home
     },
-    '/bar': {
-        component: Bar
+    '/graphDemo': {
+        component: GraphDemo
+    },
+    '/graphStudOrigin': {
+        component: GraphStudOrigin
     }
 })
 
