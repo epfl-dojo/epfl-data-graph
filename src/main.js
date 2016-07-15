@@ -3,11 +3,12 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VueTables from 'vue-tables'
+import VueAsyncData from 'vue-async-data'
 Vue.use(VueTables.client, {})
 
-Vue.use(VueRouter)
-Vue.use(VueResource)
-
+Vue.use(VueRouter);
+Vue.use(VueResource);
+Vue.use(VueAsyncData);
 
 import Home from './views/home.vue'
 import GraphDemo from './views/graphDemo.vue'

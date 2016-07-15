@@ -7,28 +7,28 @@
 export default {
   computed:{
     studFac: function(){
-      // return this.dataOrigin.map(function(year){
-      //   return year.Statistics.map(function(stat){
-      //     return stat.Studies.map(function(study){
-      //       return study.Minorities.map(function(minor){
-      //         return minor.data;
-      //       })
-      //     })
-      //   })
-      // }).reduce(function(a, b) { return a.concat(b); })
+       return this.dataOrigin.map(function(year){
+         return year.Statistics.map(function(stat){
+           return stat.Studies.map(function(study){
+             return study.Minorities.map(function(minor){
+               return minor.data;
+             })
+           })
+         })
+       }).reduce(function(a, b) { return a.concat(b); })
       return {};
     }
   },
   ready: function() {
-    //  this.$http({url: 'https://raw.githubusercontent.com/ponsfrilus/epfl-data-extract/master/data_example/dataFormation.json', method: 'GET'}).then(function (response) {
-    //       // success callback
-    //       drawChart(this.memberOrigin);
+      this.$http({url: 'https://raw.githubusercontent.com/ponsfrilus/epfl-data-extract/master/data_example/dataFormation.json', method: 'GET'}).then(function (response) {
+           // success callback
+           drawChart(this.memberOrigin);
    
-    //       this.dataOrigin = response.data;
-    //   }, function (response) {
-    //       // error callback
-    //       console.log("error ici");
-    //   });
+           this.dataOrigin = response.data;
+       }, function (response) {
+           // error callback
+           console.log("error ici");
+       });
   }
 }
 
